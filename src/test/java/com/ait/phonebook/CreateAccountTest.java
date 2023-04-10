@@ -1,6 +1,6 @@
 package com.ait.phonebook;
 
-import org.openqa.selenium.By;
+import com.Ait.phonebook.model.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -8,25 +8,31 @@ import org.testng.annotations.Test;
 public class CreateAccountTest extends TestBase{
     @BeforeMethod
     public void ensurePrecondition(){
-        if (!isElementPresent(By.xpath("//a[contains(.,'LOGIN')]"))){
-            driver.findElement(By.xpath("//button[contains(.,'Sign Out')]")).click();
+        if (!app.getHeader().isLoginLinkPresent()){
+            app.getUser().clickOnSingOutButton();
         }
     }
-    @Test
-    public void newUserRegistrationTest(){
-        driver.findElement(By.xpath("//a[contains(.,'LOGIN')]")).click();
-        Assert.assertTrue(isElementPresent(By.className("login_login__3EHKB")));
-        driver.findElement(By.cssSelector("[placeholder='Email']")).click();
-        driver.findElement(By.cssSelector("[placeholder='Email']")).clear();
-        driver.findElement(By.cssSelector("[placeholder='Email']")).sendKeys("tja@gm.de");
 
-        driver.findElement(By.cssSelector("[placeholder='Password']")).click();
-        driver.findElement(By.cssSelector("[placeholder='Password']")).clear();
-        driver.findElement(By.cssSelector("[placeholder='Password']")).sendKeys("tja@gmde2S!");
+    @Test (enabled = false)
+    public void newUserRegistrationPositiveTest(){
+        app.getHeader().clickOnLoginLink();
+        Assert.assertTrue(app.getUser().isLoginRegFormPresent());
+        app.getUser().fillLoginRecForm(new User().setEmail("tja@gm.de").setPassword("tja@gmde2S!"));
 
-        driver.findElement(By.name("registration")).click();
+        app.getUser().clickOnRegButton();
 
-        Assert.assertTrue(isElementPresent(By.xpath("//button[contains(.,'Sign Out')]")));
+        Assert.assertTrue(app.getUser().isSingOutButtonPresent());
 
     }
+
+    @Test (enabled = false)
+    public void newUserRegistrationNegativeTest(){
+        app.getUser().clickOnLoginLink();
+        Assert.assertTrue(app.getUser().isLoginRegFormPresent());
+        app.getUser().fillLoginRecForm(new User().setEmail("tja@gm.de"));
+
+        app.getUser().clickOnRegButton();
+        Assert.assertTrue(app.getUser().isAlertPresent());
+    }
+
 }

@@ -1,44 +1,45 @@
 package com.ait.phonebook;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import com.Ait.phonebook.FW.ApplicationManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
-import java.time.Duration;
-import java.util.NoSuchElementException;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+
 
 public class TestBase {
-    WebDriver driver;
 
-    @BeforeMethod
+    static ApplicationManager app = new ApplicationManager();
+    Logger logger = LoggerFactory.getLogger(TestBase.class);
+    @BeforeSuite
     public void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("remote-allow-origins=*");
-        driver = new ChromeDriver(options);
-
-        driver.get("https://telranedu.web.app");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        app.init();
     }
 
-    public boolean isElementPresent(By locator){
-        return driver.findElements(locator).size()>0;
-    }
-
-    public boolean isElementPresent2(By locator){
-        try {
-            driver.findElement(locator);
-            return true;
-        }catch (NoSuchElementException e){
-            return false;
-        }
-    }
-
-    @AfterMethod
+    @AfterSuite(enabled = true
+    )
     public void tearDown() {
-        driver.quit();
+        app.stop();
     }
+    @BeforeMethod
+    public void startTest(Method m, Object[] p){
+        logger.info("Start Test" + m.getName()+ "with data: " + Arrays.asList(p));
+    }
+    @AfterMethod
+    public void stopTest(ITestResult result){
+        if (result.isSuccess()) {
+            logger.info("PASSED: Test method "+ result.getMethod().getMethodName());
+        }else {
+            logger.info("FAILED: Test Method " + result.getMethod().getMethodName() +
+                    "Screenshot: " + app.getContact().takeScreenShot());
+        }
+        logger.info("=========================================");
+    }
+
 }
