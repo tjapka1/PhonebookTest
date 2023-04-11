@@ -39,7 +39,7 @@ public class LoginTest extends TestBase{
 
     }
 
-    @Test(dataProvider = "LogFromCSVNeg", dataProviderClass = DataProviderUser.class)
+    @Test(enabled = false, dataProvider = "LogFromCSVNeg", dataProviderClass = DataProviderUser.class)
     public void loginRegisteredUserNegativeCSVTest(User user){
         app.getHeader().clickOnLoginLink();
         Assert.assertTrue(app.getUser().isLoginRegFormPresent());

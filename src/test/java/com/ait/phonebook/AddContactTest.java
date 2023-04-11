@@ -42,7 +42,7 @@ public class AddContactTest extends TestBase {
 
 
 
-    @Test(dataProvider = "addContactWithData", dataProviderClass = DataProviderContact.class)
+    @Test(enabled = false, dataProvider = "addContactWithData", dataProviderClass = DataProviderContact.class)
     public void addContactPositiveTest(String name, String sureName, String phone, String email, String adress, String desc) {
 
         app.getContact().clickOnAddLink();

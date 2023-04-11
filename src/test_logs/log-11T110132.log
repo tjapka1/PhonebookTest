@@ -1,0 +1,31 @@
+6721 [Test worker] INFO  c.A.phonebook.FW.ApplicationManager -- All tests start in Chrome browser
+7592 [Test worker] INFO  com.ait.phonebook.TestBase -- Start TestaboutTestwith data: []
+7882 [Test worker] INFO  com.ait.phonebook.TestBase -- PASSED: Test method aboutTest
+7882 [Test worker] INFO  com.ait.phonebook.TestBase -- =========================================
+7906 [Test worker] INFO  com.ait.phonebook.TestBase -- Start TesthomeTestwith data: []
+8153 [Test worker] INFO  com.ait.phonebook.TestBase -- PASSED: Test method homeTest
+8153 [Test worker] INFO  com.ait.phonebook.TestBase -- =========================================
+8153 [Test worker] INFO  com.ait.phonebook.TestBase -- Start TestloginTestwith data: []
+8346 [Test worker] INFO  com.ait.phonebook.TestBase -- PASSED: Test method loginTest
+8346 [Test worker] INFO  com.ait.phonebook.TestBase -- =========================================
+8348 [Test worker] INFO  com.ait.phonebook.TestBase -- Start TestremoveContactTestwith data: []
+13652 [Test worker] INFO  com.ait.phonebook.TestBase -- PASSED: Test method removeContactTest
+13652 [Test worker] INFO  com.ait.phonebook.TestBase -- =========================================
+13684 [Test worker] INFO  com.ait.phonebook.TestBase -- Start TestloginRegisteredUserPositiveTestwith data: []
+35531 [Test worker] INFO  com.ait.phonebook.TestBase -- Start TestopenHomePageTestwith data: []
+46209 [AsyncHttpClient-1-4] WARN  o.a.netty.handler.WebSocketHandler -- onError
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
