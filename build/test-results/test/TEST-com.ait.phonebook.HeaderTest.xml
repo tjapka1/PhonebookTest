@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ait.phonebook.HeaderTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-04-11T09:01:39" hostname="MYWORK" time="0.753">
+  <properties/>
+  <testcase name="aboutTest" classname="com.ait.phonebook.HeaderTest" time="0.285"/>
+  <testcase name="homeTest" classname="com.ait.phonebook.HeaderTest" time="0.247"/>
+  <testcase name="loginTest" classname="com.ait.phonebook.HeaderTest" time="0.192"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

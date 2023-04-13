@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ait.phonebook.RemoveContacTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-11T09:01:44" hostname="MYWORK" time="1.648">
+  <properties/>
+  <testcase name="removeContactTest" classname="com.ait.phonebook.RemoveContacTest" time="1.648"/>
+  <system-out><![CDATA[8
+7
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

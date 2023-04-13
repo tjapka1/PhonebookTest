@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ait.phonebook.AddContactTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2023-04-11T09:03:33" hostname="MYWORK" time="0.0">
+  <properties/>
+  <testcase name="addContactPositiveFromCSVTest" classname="com.ait.phonebook.AddContactTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

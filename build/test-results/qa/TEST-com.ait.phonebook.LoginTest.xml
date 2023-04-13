@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ait.phonebook.LoginTest" tests="2" skipped="1" failures="0" errors="0" timestamp="2023-04-11T09:03:33" hostname="MYWORK" time="16.542">
+  <properties/>
+  <testcase name="loginRegisteredUserNegativeCSVTest" classname="com.ait.phonebook.LoginTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="loginRegisteredUserPositiveTest" classname="com.ait.phonebook.LoginTest" time="1.014"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
